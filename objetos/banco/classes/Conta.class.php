@@ -53,7 +53,7 @@ abstract class Conta {
     }
 
     public function __toString() {
-        $resultado = '-';
+        $resultado = '>';
         $resultado .= $this->agencia;
         $resultado .= '|';
         $resultado .= $this->numero;
@@ -63,6 +63,7 @@ abstract class Conta {
         $resultado .= $this->cliente->getNome();
         $resultado .= '|';
         $resultado .= $this->cliente->getCpf();
+        $resultado .= chr(10);
         return $resultado;
     }
 }

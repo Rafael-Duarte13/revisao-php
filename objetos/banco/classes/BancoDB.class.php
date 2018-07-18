@@ -14,10 +14,10 @@ class BancoDB {
 
     public function listaTodas() {
         $db = fopen(self::BANCO_DADOS, self::APENAS_LEITURA);
-        $str = fgets($db);
-        $contas = explode("-", $str);
+        $str = fread($db, filesize(self::BANCO_DADOS));
+        $contas = explode(">", $str);
         $lista = array();
-        for ($i = 0; $i < count($contas); $i++) {
+        for ($i = 1; $i < count($contas); $i++) {
             $c = explode("|", $contas[$i]);
 
             $conta = new ContaCorrente();
