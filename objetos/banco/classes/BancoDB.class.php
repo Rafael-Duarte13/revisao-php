@@ -1,10 +1,12 @@
 <?php
 require_once 'Conta.class.php';
 require_once 'Cliente.class.php';
+require_once 'ContaCorrente.class.php';
 class BancoDB {
     private const BANCO_DADOS = "banco.txt";
     private const APENAS_ESCRITA = "a";
     private const APENAS_LEITURA = "r";
+    private const SOBRESCRITA = "w";
 
     public function salvar(Conta $conta) {
         $db = fopen(self::BANCO_DADOS, self::APENAS_ESCRITA);
@@ -44,5 +46,27 @@ class BancoDB {
             }
         }
         return null;
+    }
+
+    public function apagarContaNumero($numero) {
+        $contas = $this->listaTodas();
+        $c = $this->obterContaPeloNumero($numero);
+        for ($i = 0; $i < count($contas); $i++) {
+            if ($contas[$i] == $c) {
+                unset($contas[$i]);
+                break;
+            }
+        }
+        $this->sobrescreveBanco($contas);
+    }
+
+    private function sobrescreveBanco($contas) {
+        $str = '';
+        foreach ($contas as $conta) {
+            $str .= $conta;
+        }
+        $db = fopen(self::BANCO_DADOS, self::SOBRESCRITA);
+        fwrite($db, $str);
+        fclose($db);
     }
 }
