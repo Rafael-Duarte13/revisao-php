@@ -2,6 +2,22 @@
 require_once 'classes/Cliente.class.php';
 require_once 'classes/ContaCorrente.class.php';
 require_once 'classes/BancoDB.class.php';
+
+$cliente = new Cliente();
+$cliente->setNome('');
+$cliente->setCpf('');
+
+$contaCorrente = new ContaCorrente();
+$contaCorrente->setCliente($cliente);
+$contaCorrente->setAgencia('');
+$contaCorrente->setNumero('');
+$contaCorrente->setSaldo('');
+if (isset($_GET['conta']) && !empty($_GET['conta'])) {
+    $banco = new BancoDB();
+    $contaCorrente = $banco->obterContaPeloNumero($_GET['conta']);
+    $banco->apagarContaNumero($_GET['conta']);
+}
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -26,34 +42,31 @@ require_once 'classes/BancoDB.class.php';
                         <legend>Dados da Conta</legend>
                         <div class="form-group">
                             <label for="agencia">Agencia</label>
-                            <input class="form-control" type="text" name="agencia" id="agencia" autofocus>
+                            <input class="form-control" type="text" name="agencia" id="agencia" value="<?=$contaCorrente->getAgencia()?>" autofocus>
                         </div>
                         <div class="form-group">
                             <label for="conta">Conta</label>
-                            <input class="form-control" type="text" name="conta" id="conta">
+                            <input class="form-control" type="text" name="conta" id="conta" value="<?=$contaCorrente->getNumero()?>">
                         </div>
                         <div class="form-group">
                             <label for="saldo">Saldo</label>
-                            <input class="form-control" type="text" name="saldo" id="saldo">
+                            <input class="form-control" type="text" name="saldo" id="saldo" value="<?=$contaCorrente->getSaldo()?>">
                         </div>
                     </fieldset>
                     <fieldset class="form-group">
                         <legend>Dados do CLiente</legend>
                         <div class="form-group">
                             <label for="nome">Nome</label>
-                            <input class="form-control" type="text" name="nome" id="nome">
+                            <input class="form-control" type="text" name="nome" id="nome" value="<?=$contaCorrente->getCliente()->getNome()?>">
                         </div>
                         <div class="form-group">
                             <label for="cpf">CPF</label>
-                            <input class="form-control" type="text" name="cpf" id="cpf">
+                            <input class="form-control" type="text" name="cpf" id="cpf" value="<?=$contaCorrente->getCliente()->getCpf()?>">
                         </div>
                     </fieldset>
                     <div class="form-row">
                         <div class="col-6">
-                            <button class="btn btn-success" type="submit">Cadastrar</button>
-                        </div>
-                        <div class="col-6">
-                            <button class="btn btn-danger" type="reset">Limpar</button>
+                            <button class="btn btn-success" type="submit">Salvar</button>
                         </div>
                     </div>
                 </form>
@@ -81,18 +94,6 @@ require_once 'classes/BancoDB.class.php';
                                     <td><?=$conta->getCliente()->getNome();?></td>
                                     <td><?=$conta->getCliente()->getCpf();?></td>
                                     <td><?=$conta->getSaldo();?></td>
-                                    <td>
-                                        <form method="post" action="editar-conta.php?conta=<?=$conta->getNumero();?>">
-                                            <input type="hidden" name="conta" value="<?=$conta->getNumero();?>">
-                                            <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i></button>
-                                        </form>
-                                    </td>
-                                    <td>
-                                        <form action="apagar-conta.php" method="post">
-                                            <input type="hidden" name="conta" value="<?=$conta->getNumero();?>">
-                                            <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i></button>
-                                        </form>
-                                    </td>
                                     </tr>
                             <?php } ?>
                         </table>
