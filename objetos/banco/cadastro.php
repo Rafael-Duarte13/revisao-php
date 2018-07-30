@@ -49,12 +49,8 @@ require_once 'classes/BancoDB.class.php';
                         </div>
                     </fieldset>
                     <div class="form-row">
-                        <div class="col-6">
-                            <button class="btn btn-success" type="submit">Cadastrar</button>
-                        </div>
-                        <div class="col-6">
-                            <button class="btn btn-danger" type="reset">Limpar</button>
-                        </div>
+                        <button class="btn btn-success" type="submit" style="margin-right: 10px;">Cadastrar</button>
+                        <button class="btn btn-danger" type="reset">Limpar</button>
                     </div>
                 </form>
                 </div>
