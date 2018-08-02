@@ -1,0 +1,7 @@
+Php
+
+HERANÇA
+Abstratas:
+.public -> Acesso liberado.
+.protected -> Acesso aos filhos.
+.private -> Acesso apenas a própria classe.
