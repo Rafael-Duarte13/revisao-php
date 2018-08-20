@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style-navbar.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Barra de navegação -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-5">
+        
+            <!-- Botão responsivo - Obs: Não ta funcionando! -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                    
+            <!-- Menus da navbar -->
+            <div class="collapse navbar-collapse" id="navbarSite">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro-produto.html">Cadastrar novo produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro-cliente.html">Cadastrar novo cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cadastrar novo funcionário</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cadastrar novo fornecedor</a>
+                    </li>
+                </ul>
+                        
+                <!-- Ferramenta de busca -->
+                <form class="form-inline">
+                    <input class="form-control mr-2" type="search" placeholder="Buscar Produto">
+                        <button class="btn btn-outline-light" type="submit">Buscar</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Formulário para o cadastro de produtos -->
+    <div class="container-fluid">
+        <form action="" method="">
+            <fieldset>
+                <legend>Informações Gerais</legend>
+
+                <label for="codigo-barras">Código de barras: </label>
+                <input type="text" id="codigo-barras" name="codigo-barras">
+
+                <br>
+
+                <label for="desc-produto">Descrição completa do produto: </label>
+                <input type="text" id="desc-produto" name="desc-produto">
+
+                <br>
+
+                <label for="des-resumida">Descrição resumida do produto: </label>
+                <input type="text" id="des-resumida" name="des-resumida">
+
+                <br>
+
+                <label for="marca">Marca: </label>
+                <input type="text" id="marca" name="marca">
+
+                <br>
+
+                <label for="fabricacao">Fabricação: </label>
+                <select name="fabricacao" id="fabricacao">
+                    <option value="terc">Terceiros</option>
+                    <option value="prop">Próprio</option>
+                </select>
+
+                <br>
+
+                <label for="setor">Setor: </label>
+                <select name="setor" id="setor">
+                    <option value="">???</option>
+                    <option value="">???</option>
+                    <option value="">???</option>
+                </select>
+
+            </fieldset>
+            <fieldset>
+                <legend>Informações Controle de Estoque</legend>
+                <label for="estoque">Estoque: </label>
+                <input type="number" id="estoque" name="estoque">
+
+                <label for="estoque-min">Estoque mínimo: </label>
+                <input type="number" id="estoque-min" name="estoque-min">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

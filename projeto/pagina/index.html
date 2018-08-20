@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt_br">
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style-navbar.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Barra de navegação -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-5">
+        
+            <!-- Botão responsivo - Obs: Não ta funcionando! -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                    
+            <!-- Menus da navbar -->
+            <div class="collapse navbar-collapse" id="navbarSite">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro-produto.html">Cadastrar novo produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro-cliente.html">Cadastrar novo cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cadastrar novo funcionário</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cadastrar novo fornecedor</a>
+                    </li>
+                </ul>
+                        
+                <!-- Ferramenta de busca -->
+                <form class="form-inline">
+                    <input class="form-control mr-2" type="search" placeholder="Buscar Produto">
+                        <button class="btn btn-outline-light" type="submit">Buscar</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid">
+        <h3 style="margin-top: 10px;">Aqui ficará a lista de produtos!</h3>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-5">
+        <a class="navbar-brand" href="">
+            <img src="img/icon.png" alt="Logo" width="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSite">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdown-cadastro" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cadastrar
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-cadastro">
+                            <a class="dropdown-item" href="#">Novo produto</a>
+                            <a class="dropdown-item" href="#">Novo cliente</a>
+                            <a class="dropdown-item" href="#">Novo funcionário</a>
+                            <a class="dropdown-item" href="#">Novo fornecedor</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <input class="form-control mr-2" type="search" placeholder="Buscar produto">
+                <button class="btn btn-outline-light" type="submit">Buscar</button>
+            </form>
+        </div>
+    </nav>
+</body>
+</html>
