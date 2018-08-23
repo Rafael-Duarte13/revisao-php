@@ -51,55 +51,78 @@
     </div>
 
     <!-- Formulário para o cadastro de produtos -->
-    <div class="container-fluid">
+    <div class="container-fluid ml-5 mr-5 mt-3">
         <form action="" method="">
             <fieldset>
                 <legend>Informações Gerais</legend>
+                
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label for="id-prod">ID:</label>
+                        <input type="number" class="form-control" id="id-prod" name="id_produto" disabled>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="cod-bar">Código de barras:</label>
+                        <input type="text" class="form-control" id="cod-bar" name="codigo_barras">
+                    </div>
+                </div>
+                
+                <div class="form-group col-md-8">
+                    <label for="desc-prod">Descrição completa do produto:</label>
+                    <input type="text" class="form-control" id="desc-prod" name="descricao_produto">
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="des-resum">Descrição resumida do produto:</label>
+                    <input type="text" class="form-control" id="des-resum" name="descricao_resumida">
+                </div>
+                
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label for="marc">Marca:</label>
+                        <input type="text" class="form-control" id="marc" name="marca">
+                    </div>
 
-                <label for="codigo-barras">Código de barras: </label>
-                <input type="text" id="codigo-barras" name="codigo-barras">
+                    <div class="form-group col-md-3">
+                        <label for="fabricacao">Fabricação:</label>
+                        <select class="form-control" name="fabricacao" id="fabricacao">
+                            <option value="terc">Terceiros</option>
+                            <option value="prop">Próprio</option>
+                        </select>
+                    </div>
+    
+                    <div class="from-group col-md-3">
+                        <label for="setor">Setor:</label>
+                        <select class="form-control" name="setor" id="setor">
+                            <option value="">???</option>
+                            <option value="">???</option>
+                            <option value="">???</option>
+                        </select>
+                    </div>
+                </div>
 
-                <br>
-
-                <label for="desc-produto">Descrição completa do produto: </label>
-                <input type="text" id="desc-produto" name="desc-produto">
-
-                <br>
-
-                <label for="des-resumida">Descrição resumida do produto: </label>
-                <input type="text" id="des-resumida" name="des-resumida">
-
-                <br>
-
-                <label for="marca">Marca: </label>
-                <input type="text" id="marca" name="marca">
-
-                <br>
-
-                <label for="fabricacao">Fabricação: </label>
-                <select name="fabricacao" id="fabricacao">
-                    <option value="terc">Terceiros</option>
-                    <option value="prop">Próprio</option>
-                </select>
-
-                <br>
-
-                <label for="setor">Setor: </label>
-                <select name="setor" id="setor">
-                    <option value="">???</option>
-                    <option value="">???</option>
-                    <option value="">???</option>
-                </select>
 
             </fieldset>
+
+            <br>
+
             <fieldset>
                 <legend>Informações Controle de Estoque</legend>
-                <label for="estoque">Estoque: </label>
-                <input type="number" id="estoque" name="estoque">
 
-                <label for="estoque-min">Estoque mínimo: </label>
-                <input type="number" id="estoque-min" name="estoque-min">
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label for="estoque">Estoque:</label>
+                        <input type="number" class="form-control" id="estoque" name="estoque">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="estoque-min">Estoque mínimo:</label>
+                        <input type="number" class="form-control" id="estoque-min" name="estoque-min">
+                    </div>
+                </div>
+
             </fieldset>
+
+            <button class="btn btn-success" type="submit">Cadastrar</button>
+            <button class="btn btn-danger" type="reset">Limpar</button>
         </form>
     </div>
 
